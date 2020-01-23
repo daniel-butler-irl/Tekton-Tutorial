@@ -5,6 +5,6 @@ metadata:
 spec:
   params:
     - name: repository
-      value: "https://github.ibm.com/DANIELBU/Tekton-Tutorial"
+      value: "https://github.com/danielbu-ibm/Tekton-Tutorial"
     - name: branch
       value: "master"
