@@ -4,7 +4,5 @@ metadata:
   name: hello-listener
 spec:
   triggers:
-    - binding:
-        name: hello-trigger-binding
-      template:
+    - template:
         name: hello-trigger-template
