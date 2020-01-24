@@ -7,4 +7,4 @@ spec:
     - name: repository
       value: $(event.repository.html_url)
     - name: branch
-      value: $(event.ref)
+      value: $(event.head.ref)
