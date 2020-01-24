@@ -5,6 +5,10 @@ metadata:
 spec:
   params:
     - name: repository
-      value: $(event.repository.html_url)
+      value: "https://github.com/danielbu-ibm/Tekton-Tutorial"
     - name: branch
-      value: $(event.pull_request.head.ref)
+      value: "master"
+#    - name: repository
+#      value: $(event.repository.html_url)
+#    - name: branch
+#      value: $(event.pull_request.head.ref)
