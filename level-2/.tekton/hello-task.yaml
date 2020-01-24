@@ -1,0 +1,18 @@
+apiVersion: tekton.dev/v1alpha1
+kind: Task
+metadata:
+  name: hello-task
+spec:
+  inputs:
+    params:
+      - name: repository
+        type: string
+      - name: branch
+        type: string
+  steps:
+    - name: echo
+      image: ubuntu
+      command:
+        - echo
+      args:
+        - "hello world from $(inputs.params.repository):$(inputs.params.branch)"
