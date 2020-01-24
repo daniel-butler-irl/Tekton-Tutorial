@@ -1,0 +1,19 @@
+apiVersion: tekton.dev/v1alpha1
+kind: Pipeline
+metadata:
+  name: hello-pipeline
+spec:
+  params:
+    - name: repository
+      description: the git repo
+    - name: branch
+      description: the branch for the git repo
+  tasks:
+    - name: pipeline-hello-task
+      taskRef:
+        name: hello-task
+      params:
+        - name: repository
+          value: $(params.repository)
+        - name: branch
+          value: $(params.branch)
