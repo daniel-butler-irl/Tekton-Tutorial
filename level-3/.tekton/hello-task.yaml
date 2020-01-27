@@ -24,5 +24,6 @@ spec:
       command: ["/bin/sh","-c"]
       args:
         - |
+          curl --help
           echo '{"state": "$(inputs.params.status_state)","target_url": "$(inputs.params.target_url)", "description": "$(inputs.params.status_description)","context": "$(inputs.params.status_name)"}' $(inputs.params.statuses_url)
 #          curl -s -o /dev/null --max-time 60 -X POST -u $(params.github_user):$(params.github_password) -H "Content-Type: application/json" -d '{"state": "$(inputs.params.status_state)","target_url": "$(inputs.params.target_url)", "description": "$(inputs.params.status_description)","context": "$(inputs.params.status_name)"}' $(inputs.params.statuses_url)
