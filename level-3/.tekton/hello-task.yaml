@@ -25,4 +25,4 @@ spec:
       args:
         - |
           curl -s -o /dev/null --max-time 60 -X POST -u $(inputs.params.github_user):$(inputs.params.github_password) -H "Content-Type: application/json" -d '{"state": "$(inputs.params.status_state)","target_url": "$(inputs.params.target_url)", "description": "$(inputs.params.status_description)","context": "$(inputs.params.status_name)"}' $(inputs.params.statuses_url)
-          
+          sleep 30
