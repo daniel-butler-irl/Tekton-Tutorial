@@ -10,8 +10,6 @@ spec:
       description: the branch for the git repo
     - name: statuses_url
       description: the status url to update
-    - name: commit_sha
-      description: the commit id of to update the status of
   tasks:
     - name: pipeline-hello-task
       taskRef:

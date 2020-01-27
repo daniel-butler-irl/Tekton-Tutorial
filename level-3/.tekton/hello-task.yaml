@@ -8,7 +8,6 @@ spec:
       - name: repository
       - name: branch
       - name: statuses_url
-      - name: commit_sha
       - name: status_name
         default: "tekton_pr_status"
       - name: status_state
