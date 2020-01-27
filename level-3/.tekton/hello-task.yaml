@@ -13,12 +13,14 @@ spec:
         default: "tekton_pr_status"
       - name: status_state
         default: "pending"
-      - name: message
+      - name: status_description
         default: "Running Tekton Pipeline"
+      - name: target_url
+        default: "https://cloud.ibm.com/devops/pipelines/tekton/"
   steps:
     - name: echo
       image: ubuntu
       command: ["/bin/sh","-c"]
       args:
         - |
-          curl -s -o /dev/null --max-time 60 -X POST -u $(params.GITHUB_USER):$(params.GITHUB_PASSWORD) -H "Content-Type: application/json" -d '{"state": "$(inputs.params.status_state)","target_url": "${target_url}", "description": "${status_description}","context": "${status_name}"}' $status_url"
+          curl -s -o /dev/null --max-time 60 -X POST -u $(params.GITHUB_USER):$(params.GITHUB_PASSWORD) -H "Content-Type: application/json" -d '{"state": "$(inputs.params.status_state)","target_url": "$(inputs.params.target_url)", "description": "$(inputs.params.status_description)","context": "$(inputs.params.status_name)"}' $(inputs.params.status_url)
