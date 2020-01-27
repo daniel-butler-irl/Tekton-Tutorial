@@ -21,9 +21,4 @@ spec:
       command: ["/bin/sh","-c"]
       args:
         - |
-          echo "$(inputs.params.statuses_url)"
-          echo "$(inputs.params.commit_sha)"
-          env
-#          export STATUS_URL = $(echo "$(inputs.params.statuses_url)" | sed -e "s/{sha}/${$(inputs.params.commit_sha)}/g")
-
-# curl -s -o /dev/null --max-time 60 -X POST -u $(params.GITHUB_USER):$(params.GITHUB_PASSWORD) -H "Content-Type: application/json" -d '{"state": "$(inputs.params.status_state)","target_url": "${target_url}", "description": "${status_description}","context": "${status_name}"}' $status_url"
+          curl -s -o /dev/null --max-time 60 -X POST -u $(params.GITHUB_USER):$(params.GITHUB_PASSWORD) -H "Content-Type: application/json" -d '{"state": "$(inputs.params.status_state)","target_url": "${target_url}", "description": "${status_description}","context": "${status_name}"}' $status_url"

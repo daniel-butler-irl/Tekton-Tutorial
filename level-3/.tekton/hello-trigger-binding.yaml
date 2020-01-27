@@ -9,6 +9,4 @@ spec:
     - name: branch
       value: $(event.pull_request.head.ref)
     - name: statuses_url
-      value: $(event.repository.statuses_url)
-    - name: commit_sha
       value: $(event.pull_request.statuses_url)

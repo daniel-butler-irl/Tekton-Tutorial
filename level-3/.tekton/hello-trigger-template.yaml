@@ -27,7 +27,5 @@ spec:
             value: $(params.branch)
           - name: statuses_url
             value: $(params.statuses_url)
-          - name: commit_sha
-            value: $(params.commit_sha)
 
 
