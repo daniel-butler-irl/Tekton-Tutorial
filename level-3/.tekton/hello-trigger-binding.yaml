@@ -1,0 +1,14 @@
+apiVersion: tekton.dev/v1alpha1
+kind: TriggerBinding
+metadata:
+  name: hello-trigger-binding
+spec:
+  params:
+    - name: repository
+      value: $(event.repository.html_url)
+    - name: branch
+      value: $(event.pull_request.head.ref)
+    - name: statuses_url
+      value: $(event.repository.statuses_url)
+    - name: commit_sha
+      value: $(event.commits.id)

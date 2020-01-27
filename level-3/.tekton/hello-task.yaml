@@ -1,0 +1,26 @@
+apiVersion: tekton.dev/v1alpha1
+kind: Task
+metadata:
+  name: hello-task
+spec:
+  inputs:
+    params:
+      - name: repository
+      - name: branch
+      - name: statuses_url
+      - name: commit_sha
+      - name: status_name
+        default: "tekton_pr_status"
+      - name: status_state
+        default: "pending"
+      - name: message
+        default: "Running Tekton Pipeline"
+  steps:
+    - name: echo
+      image: ubuntu
+      command: ["/bin/bash", "-c"]
+      args: |
+        export STATUS_URL = $(echo $(inputs.params.statuses_url) | sed -e "s/{sha}/${$(inputs.params.commit_sha)}/g")
+        env
+
+# curl -s -o /dev/null --max-time 60 -X POST -u $(params.GITHUB_USER):$(params.GITHUB_PASSWORD) -H "Content-Type: application/json" -d '{"state": "$(inputs.params.status_state)","target_url": "${target_url}", "description": "${status_description}","context": "${status_name}"}' $status_url"
