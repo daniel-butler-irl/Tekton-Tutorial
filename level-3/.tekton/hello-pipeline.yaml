@@ -10,6 +10,8 @@ spec:
       description: the branch for the git repo
     - name: statuses_url
       description: the status url to update
+    - name: github_user
+    - name: github_password
   tasks:
     - name: pipeline-hello-task
       taskRef:
@@ -21,4 +23,8 @@ spec:
           value: $(params.branch)
         - name: statuses_url
           value: $(params.statuses_url)
+        - name: github_user
+          value: $(params.github_user)
+        - name: github_password
+          value: $(params.github_password)
 

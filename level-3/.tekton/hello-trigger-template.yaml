@@ -25,3 +25,7 @@ spec:
             value: $(params.branch)
           - name: statuses_url
             value: $(params.statuses_url)
+          - name: github_user
+            value: $(params.GITHUB_USER)
+          - name: github_password
+            value: $(params.GITHUB_PASSWORD)
