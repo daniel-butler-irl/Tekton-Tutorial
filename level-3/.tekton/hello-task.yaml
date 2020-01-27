@@ -22,4 +22,5 @@ spec:
       command: ["/bin/sh","-c"]
       args:
         - |
-          curl -s -o /dev/null --max-time 60 -X POST -u $(params.GITHUB_USER):$(params.GITHUB_PASSWORD) -H "Content-Type: application/json" -d '{"state": "$(inputs.params.status_state)","target_url": "$(inputs.params.target_url)", "description": "$(inputs.params.status_description)","context": "$(inputs.params.status_name)"}' $(inputs.params.status_url)
+          echo "HI"
+#          curl -s -o /dev/null --max-time 60 -X POST -u $(params.GITHUB_USER):$(params.GITHUB_PASSWORD) -H "Content-Type: application/json" -d '{"state": "$(inputs.params.status_state)","target_url": "$(inputs.params.target_url)", "description": "$(inputs.params.status_description)","context": "$(inputs.params.status_name)"}' $(inputs.params.status_url)
