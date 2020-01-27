@@ -11,4 +11,4 @@ spec:
     - name: statuses_url
       value: $(event.repository.statuses_url)
     - name: commit_sha
-      value: $(event.commits[0].id)
+      value: $(event.pull_request.statuses_url)
