@@ -15,7 +15,7 @@ spec:
   tasks:
     - name: pipeline-hello-task
       taskRef:
-        name: hello-task
+        name: hello-task-start
       params:
         - name: repository
           value: $(params.repository)
@@ -27,4 +27,30 @@ spec:
           value: $(params.github_user)
         - name: github_password
           value: $(params.github_password)
+        - name: status_name
+          value: "tekton_pr_status"
+        - name: status_state
+          value: "pending"
+        - name: status_description
+          value: "Hello Tekton Pipeline Running"
 
+    - name: pipeline-hello-task
+      taskRef:
+        name: hello-task-finished
+      params:
+        - name: repository
+          value: $(params.repository)
+        - name: branch
+          value: $(params.branch)
+        - name: statuses_url
+          value: $(params.statuses_url)
+        - name: github_user
+          value: $(params.github_user)
+        - name: github_password
+          value: $(params.github_password)
+        - name: status_name
+          value: "tekton_pr_status"
+        - name: status_state
+          value: "success"
+        - name: status_description
+          value: "Hello Tekton Pipeline Complete"
