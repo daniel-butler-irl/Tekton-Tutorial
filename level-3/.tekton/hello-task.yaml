@@ -18,8 +18,7 @@ spec:
   steps:
     - name: echo
       image: ubuntu
-      command: ["/bin/bash", "-c"]
-      args:
+      command:
         -|
           echo "Hi!"
 #          export STATUS_URL = $(echo $(inputs.params.statuses_url) | sed -e "s/{sha}/${$(inputs.params.commit_sha)}/g")
