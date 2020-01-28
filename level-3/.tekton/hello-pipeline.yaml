@@ -13,9 +13,9 @@ spec:
     - name: github_user
     - name: github_password
   tasks:
-    - name: pipeline-hello-task
+    - name: pipeline-hello-task-start
       taskRef:
-        name: hello-task-start
+        name: hello-task
       params:
         - name: repository
           value: $(params.repository)
