@@ -15,7 +15,7 @@ spec:
   tasks:
     - name: pipeline-hello-task-start
       taskRef:
-        name: hello-task
+        name: hello-task-1
       params:
         - name: repository
           value: $(params.repository)
