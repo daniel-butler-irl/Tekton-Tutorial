@@ -37,6 +37,7 @@ spec:
     - name: pipeline-hello-task-finish
       taskRef:
         name: hello-task
+      runAfter: pipeline-hello-task-start
       params:
         - name: repository
           value: $(params.repository)
