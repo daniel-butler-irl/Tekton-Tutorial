@@ -27,13 +27,13 @@ spec:
           value: $(params.github_user)
         - name: github_password
           value: $(params.github_password)
-        - name: status_name
-          value: "tekton_pr_status"
-        - name: status_state
-          value: "pending"
-        - name: status_description
-          value: "Hello Tekton Pipeline Running"
-#
+#        - name: status_name
+#          value: "tekton_pr_status"
+#        - name: status_state
+#          value: "pending"
+#        - name: status_description
+#          value: "Hello Tekton Pipeline Running"
+##
 #    - name: pipeline-hello-task
 #      taskRef:
 #        name: hello-task-finished
