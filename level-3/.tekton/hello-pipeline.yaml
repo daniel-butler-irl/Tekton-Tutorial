@@ -13,7 +13,7 @@ spec:
     - name: github_user
     - name: github_password
   tasks:
-    - name: pipeline-hello-task-start
+    - name: pipeline-hello
       taskRef:
         name: hello-task
       params:
@@ -34,7 +34,7 @@ spec:
         - name: status_description
           value: "Hello Tekton Pipeline Running"
 
-    - name: pipeline-hello-task-finish
+    - name: pipeline-hello-task
       taskRef:
         name: hello-task
       runAfter:
