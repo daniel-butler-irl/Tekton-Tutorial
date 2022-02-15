@@ -10,9 +10,9 @@ spec:
       - name: branch
         type: string
   steps:
-    - name: echo
+    - name: echo 
       image: ubuntu
       command:
         - echo
       args:
-        - "hello world from $(inputs.params.repository):$(inputs.params.branch)"
+        - "hello world from :- $(inputs.params.repository):$(inputs.params.branch)"
